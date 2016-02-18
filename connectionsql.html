@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<p>{{ x1 }}</p>
+<p>{{ x2 }}</p>
+</div>
+<form action="/post" method="POST">
+			User id: <input type="number" name="user_id" ng-model="users.user_id">  <br>
+
+			User Name: <input type="text" name="user_name" ng-model="users.user_name">
+						<input type="submit" value="Submit">
+		</form>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.x1 = "ashok";
+    $scope.x2 = angular.uppercase($scope.x1);
+});
+</script>
+
+</body>
+</html>
